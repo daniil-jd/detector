@@ -1,0 +1,60 @@
+<html>
+
+<body>
+<br>
+<div>Данные с детектора ({{detector.serial}}):</div>
+<br>
+    <div>
+        <table>
+            <tr>
+                <td><b>ip-адрес:</b></td>
+                <td><i>{{detector.ip}}</i></td>
+            </tr>
+            <tr>
+                <td><b>mac-адрес:</b></td>
+                <td><i>{{detector.mac}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Серийный номер:</b></td>
+                <td><i>{{detector.serial}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Дата ввода в эксплуатацию:</b></td>
+                <td><i>{{detector.startData}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Гарантийный период:</b></td>
+                <td><i>{{detector.warrantyPeriod}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Время непрерывной работы:</b></td>
+                <td><i>{{detector.workTime}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Общее время работы:</b></td>
+                <td><i>{{detector.allWorkTime}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Время работы на аварийном питании:</b></td>
+                <td><i>{{detector.emergencyPowerTime}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Количество проходов:</b></td>
+                <td><i>{{detector.detectedCount}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Количество срабатываний:</b></td>
+                <td><i>{{detector.positiveDetectedCount}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Рабочая частота:</b></td>
+                <td><i>{{detector.frequency}}</i></td>
+            </tr>
+            <tr>
+                <td><b>Ошибки:</b></td>
+                <td><i>{{detector.errors}}</i></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
