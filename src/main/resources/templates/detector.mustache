@@ -1,60 +1,121 @@
 <html>
-
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Детектор</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
 <body>
-<br>
-<div>Данные с детектора ({{detector.serial}}):</div>
-<br>
-    <div>
-        <table>
-            <tr>
-                <td><b>ip-адрес:</b></td>
-                <td><i>{{detector.ip}}</i></td>
-            </tr>
-            <tr>
-                <td><b>mac-адрес:</b></td>
-                <td><i>{{detector.mac}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Серийный номер:</b></td>
-                <td><i>{{detector.serial}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Дата ввода в эксплуатацию:</b></td>
-                <td><i>{{detector.startData}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Гарантийный период:</b></td>
-                <td><i>{{detector.warrantyPeriod}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Время непрерывной работы:</b></td>
-                <td><i>{{detector.workTime}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Общее время работы:</b></td>
-                <td><i>{{detector.allWorkTime}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Время работы на аварийном питании:</b></td>
-                <td><i>{{detector.emergencyPowerTime}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Количество проходов:</b></td>
-                <td><i>{{detector.detectedCount}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Количество срабатываний:</b></td>
-                <td><i>{{detector.positiveDetectedCount}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Рабочая частота:</b></td>
-                <td><i>{{detector.frequency}}</i></td>
-            </tr>
-            <tr>
-                <td><b>Ошибки:</b></td>
-                <td><i>{{detector.errors}}</i></td>
-            </tr>
-        </table>
-    </div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
-</html>
+
+<!--navbar start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!--<a class="navbar-brand" href="/">Sweater</a>-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Детектор</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/detector">Данные в xml</a>
+            </li>
+        </ul>
+        <!--<div class="navbar-text mr-3">${name}</div>-->
+    </div>
+</nav>
+<!--navbar end-->
+
+<!--table start-->
+<div class="mx-auto" style="width: 80%;">
+    <table class="table table-striped my-3">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значение</th>
+            <th scope="col">Единица измерения</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>ip-адрес</td>
+            <td>{{detector.ip}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>mac-адрес</td>
+            <td>{{detector.mac}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Серийный номер</td>
+            <td>{{detector.serial}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Дата ввода в эксплуатацию</td>
+            <td>{{detector.startData}}</td>
+            <td>YYYY-MM-DD HH-MM-SS</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Гарантийный период</td>
+            <td>{{detector.warrantyPeriod}}</td>
+            <td>лет (год)</td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>Время непрерывной работы</td>
+            <td>{{detector.workTime}}</td>
+            <td>час(а/ов)</td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>Общее время работы</td>
+            <td>{{detector.allWorkTime}}</td>
+            <td>час(а/ов)</td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>Количество проходов</td>
+            <td>{{detector.serial}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>Количество срабатываний</td>
+            <td>{{detector.positiveDetectedCount}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>Рабочая частота</td>
+            <td>{{detector.frequency}}</td>
+            <td>Гц</td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td>Ошибки</td>
+            <td>{{detector.errors}}</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--table end-->
