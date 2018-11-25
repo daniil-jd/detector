@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Детектор</title>
+    <title>Детектор {{detector.address}}</title>
     <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">Детектор</a>
+                <a class="nav-link" href="/">Детектор {{detector.address}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/api/detector">Данные в xml</a>
@@ -114,6 +114,18 @@
             <td>Ошибки</td>
             <td>{{detector.errors}}</td>
             <td></td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td>Адрес местоположения</td>
+            <td>{{detector.address}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">13</th>
+            <td>Время работы на аварийном питании</td>
+            <td>{{detector.emergencyPowerTime}}</td>
+            <td>час(а/ов)</td>
         </tr>
         </tbody>
     </table>
